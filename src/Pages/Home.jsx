@@ -4,7 +4,7 @@ import Footer from "../components/footer/footer";
 
 const Home = () => {
   return (
-    <main className="mainContantWrap h-screen w-full bg-base-dark">
+    <main className="mainContantWrap h-screen w-full bg-base-light-primary dark:bg-base-dark-primary">
       <header>
         <Navbar />
       </header>
