@@ -1,8 +1,9 @@
-import React from 'react'
+import { useParams } from "react-router"
 
 const WeatherForecastDashboard = () => {
+  const { location } = useParams()
   return (
-    <div></div>
+    <div>{location}</div>
   )
 }
 
