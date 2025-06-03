@@ -13,12 +13,12 @@ const SearchBox = () => {
           autoComplete="off"
           spellCheck="false"
           placeholder="Search Your Location"
-          className="bg-transparent outline-0 border-0 w-fit text-[1.1rem] md:text-xl text-font-dark-primary dark:text-font-dark-primary placeholder:text-font-light-muted dark:placeholder:text-font-dark-muted"
+          className="bg-transparent outline-0 border-0 w-fit text-[1.1rem] md:text-xl text-font-light-primary dark:text-font-dark-primary placeholder:text-font-light-muted dark:placeholder:text-font-dark-muted"
         />
       </form>
       <div className="closeIcon h-full mr-5">
         {
-          <IoCloseSharp className="cursor-pointer opacity-0 text-xl md:text-2xl text-font-dark-primary dark:text-font-dark-primary" />
+          <IoCloseSharp className="cursor-pointer text-xl md:text-2xl text-font-light-primary dark:text-font-dark-primary" />
         }
       </div>
     </div>
