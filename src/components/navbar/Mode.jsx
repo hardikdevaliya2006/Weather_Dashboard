@@ -4,8 +4,8 @@ import { TbSunFilled } from "react-icons/tb";
 const Mode = () => {
   return (
     <div className="modeWraper">
-      <div className="base relative md:h-13 h-10 md:w-25 w-20 flex items-center justify-center rounded-full  bg-base-light-tertiary dark:bg-base-dark-tertiary">
-        <div className="icons cursor-pointer h-12 w-full flex items-center justify-evenly">
+      <div className="base relative md:h-13 h-9.5 md:w-25 w-20 flex items-center justify-center rounded-full  bg-base-light-tertiary dark:bg-base-dark-tertiary">
+        <div className="icons cursor-pointer h-9.5 w-full flex items-center justify-evenly">
           <div className="lightModeIcon h-6 md:w-7 flex items-center justify-center w-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ const Mode = () => {
               />{" "}
             </svg>
           </div>
-          <div className="toggleButton flex items-center justify-center md:h-13 h-10 md:w-13 w-10 border border-base-light-accent dark:border-base-dark-accent rounded-full absolute right-0 top-0 z-10 bg-base-light-quaternary dark:bg-base-dark-secondary">
+          <div className="toggleButton flex items-center justify-center md:h-13 h-9.5 md:w-13 w-10 border border-base-light-accent dark:border-base-dark-accent rounded-full absolute right-0 top-0 z-10 bg-base-light-quaternary dark:bg-base-dark-secondary">
             <TbSunFilled className="text-font-light-primary dark:text-font-dark-primary text-xl" />
           </div>
         </div>
