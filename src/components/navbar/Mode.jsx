@@ -1,10 +1,19 @@
+import { useEffect } from "react";
 import { FaMoon } from "react-icons/fa";
 import { TbSunFilled } from "react-icons/tb";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../store/reducers/theme.reducer";
 
 const Mode = () => {
+  const mode = useSelector((state) => state.theme.mode);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", mode);
+  }, [mode]);
+
   return (
     <div className="modeWraper">
-      <div className="base relative md:h-13 h-9.5 md:w-25 w-20 flex items-center justify-center rounded-full  bg-base-light-tertiary dark:bg-base-dark-tertiary">
+      <div className="base relative md:h-13 h-9.5 md:w-25 w-18 flex items-center justify-center rounded-full  bg-base-light-tertiary dark:bg-base-dark-tertiary">
         <div className="icons cursor-pointer h-9.5 w-full flex items-center justify-evenly">
           <div className="lightModeIcon h-6 md:w-7 flex items-center justify-center w-6">
             <svg
@@ -45,8 +54,17 @@ const Mode = () => {
               />{" "}
             </svg>
           </div>
-          <div className="toggleButton flex items-center justify-center md:h-13 h-9.5 md:w-13 w-10 border border-base-light-accent dark:border-base-dark-accent rounded-full absolute left-0 top-0 z-10 bg-base-light-quaternary dark:bg-base-dark-secondary">
-            <TbSunFilled className="text-font-light-primary dark:text-font-dark-primary text-xl" />
+          <div
+            onClick={() => dispatch(toggleTheme())}
+            className={`toggleButton flex items-center justify-center md:h-13 h-9.5 md:w-13 w-10 border border-base-light-accent dark:border-base-dark-accent rounded-full absolute ${
+              mode === "dark" ? "translate-x-4 md:translate-x-6" : "-translate-x-4 md:-translate-x-6"
+            } transition-transform duration-300 top-0 z-10 bg-base-light-quaternary dark:bg-base-dark-secondary`}
+          >
+            {mode === "dark" ? (
+              <FaMoon className="text-font-light-primary dark:text-font-dark-primary text-xl" />
+            ) : (
+              <TbSunFilled className="text-font-light-primary dark:text-font-dark-primary text-xl" />
+            )}
           </div>
         </div>
       </div>

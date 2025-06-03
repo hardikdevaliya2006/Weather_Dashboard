@@ -1,4 +1,4 @@
-import { BsFillCupHotFill } from "react-icons/bs";
+import { GiCoffeeCup } from "react-icons/gi";
 import { FaSun } from "react-icons/fa6";
 import { MdNightsStay } from "react-icons/md";
 
@@ -13,7 +13,7 @@ const Title = () => {
     Icon = FaSun;
   } else if (currentHour >= 12 && currentHour < 17) {
     greeting = "Good Afternoon";
-    Icon = BsFillCupHotFill;
+    Icon = GiCoffeeCup;
   } else {
     greeting = "Good Night";
     Icon = MdNightsStay;
