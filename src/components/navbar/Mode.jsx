@@ -45,7 +45,7 @@ const Mode = () => {
               />{" "}
             </svg>
           </div>
-          <div className="toggleButton flex items-center justify-center md:h-13 h-9.5 md:w-13 w-10 border border-base-light-accent dark:border-base-dark-accent rounded-full absolute right-0 top-0 z-10 bg-base-light-quaternary dark:bg-base-dark-secondary">
+          <div className="toggleButton flex items-center justify-center md:h-13 h-9.5 md:w-13 w-10 border border-base-light-accent dark:border-base-dark-accent rounded-full absolute left-0 top-0 z-10 bg-base-light-quaternary dark:bg-base-dark-secondary">
             <TbSunFilled className="text-font-light-primary dark:text-font-dark-primary text-xl" />
           </div>
         </div>
