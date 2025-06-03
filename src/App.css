@@ -4,16 +4,18 @@
   --color-base-dark-primary: #0f0f0f;
   --color-base-dark-secondary: #1e1e1e;
   --color-base-dark-tertiary: #272727;
+  --color-base-dark-quaternary: #262626;
   --color-base-dark-accent: #363636;
-
-  --color-font-dark-primary: #ffffff;
-  --color-font-dark-secondary: #b9b9b9;
-  --color-font-dark-muted: #5e5e5e;
 
   --color-base-light-primary: #ffffff;
   --color-base-light-secondary: #f5f5f5;
   --color-base-light-tertiary: #e0e0e0;
+  --color-base-light-quaternary: #ededed;
   --color-base-light-accent: #cccccc;
+
+  --color-font-dark-primary: #ffffff;
+  --color-font-dark-secondary: #b9b9b9;
+  --color-font-dark-muted: #5e5e5e;
 
   --color-font-light-primary: #1a1a1a;
   --color-font-light-secondary: #555555;
