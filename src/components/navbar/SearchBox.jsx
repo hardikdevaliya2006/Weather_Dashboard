@@ -25,12 +25,7 @@ const SearchBox = () => {
     dispatch(setQuery(""))
     navigate("/")
   }
-
-  if (loading) {
-    console.log("Loading........");
-  } else {
-    console.log(locationRawData);
-  }
+  
   return (
     <div className="flex py-2 md:py-3.5 w-full rounded-full bg-base-light-tertiary dark:bg-base-dark-tertiary items-center justify-start">
       <div className="serchIcon mx-3 md:mx-5">

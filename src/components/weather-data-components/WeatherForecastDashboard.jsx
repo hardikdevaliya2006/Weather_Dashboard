@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import getCurrentLocation from "../../store/Actions/getCurrentLocation.thunk";
 import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
+import sunny from "../../../public/svg/weatherIcon/sunny.svg"
 
 const WeatherForecastDashboard = () => {
-  const { locationRawData } = useSelector((state) => state.search);
+  const { locationRawData, loading } = useSelector((state) => state.search);
   const { location } = useParams();
   const routerLocation = useLocation();
   const dispatch = useDispatch();
@@ -22,8 +23,6 @@ const WeatherForecastDashboard = () => {
             const { latitude, longitude } = position.coords;
             const locationName = await getCurrentLocation(latitude, longitude);
             if (locationName) {
-              console.log(locationName);
-
               dispatch(fetchWeatherByLocation(locationName));
             } else {
               alert("City Not Found");
@@ -44,10 +43,13 @@ const WeatherForecastDashboard = () => {
   }, [dispatch, location, routerLocation.pathname]);
 
   return (
-    <div className="flex dark:text-white text-base-dark-primary items-center justify-center flex-col gap-5">
-      <div className="location text-xl font-semibold">{location}</div>
-      <div className="data">{JSON.stringify(locationRawData)}</div>
-    </div>
+    <section className="flex bg-base-light-secondary dark:bg-base-dark-secondary dark:text-white text-base-dark-primary items-center justify-center flex-col gap-5">
+      {loading ? (
+        <p>Loading weather data...</p>
+      ) : (
+        <img src={sunny} alt="sunny" className="h-40 w-40" />
+      )}
+    </section>
   );
 };
 
