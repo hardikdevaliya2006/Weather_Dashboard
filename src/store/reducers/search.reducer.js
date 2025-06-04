@@ -12,7 +12,6 @@ const searchSlice = createSlice({
   reducers: {
     setQuery: (state, action) => {
       state.query = action.payload;
-      console.log(state.query);
     },
   },
   extraReducers: (builder) => {
@@ -28,6 +27,7 @@ const searchSlice = createSlice({
       .addCase(fetchWeatherByLocation.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+        state.locationRawData = state.error;
       });
   },
 });

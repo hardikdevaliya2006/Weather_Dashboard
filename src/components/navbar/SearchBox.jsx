@@ -8,17 +8,23 @@ import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
 const SearchBox = () => {
   const { query, locationRawData, loading } = useSelector(
     (state) => state.search
-  );
+  )
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (query.trim()) {
-      dispatch(fetchWeatherByLocation(query));
-      navigate(`/${query}`);
+      dispatch(fetchWeatherByLocation(query))
+      navigate(`/${query}`)
     }
-  };
+  }
+
+  const handleClear = () => {
+    dispatch(setQuery(""))
+    navigate("/")
+  }
 
   if (loading) {
     console.log("Loading........");
@@ -42,7 +48,7 @@ const SearchBox = () => {
         />
       </form>
       <div
-        onClick={() => dispatch(setQuery(""))}
+        onClick={() => handleClear()}
         className="closeIcon h-full md:mr-5 mr-3"
       >
         <IoCloseSharp
