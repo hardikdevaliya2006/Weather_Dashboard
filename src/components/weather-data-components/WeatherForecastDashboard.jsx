@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import getCurrentLocation from "../../store/Actions/getCurrentLocation.thunk";
 import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
-import sunny from "../../../public/svg/weatherIcon/sunny.svg"
 
 const WeatherForecastDashboard = () => {
   const { locationRawData, loading } = useSelector((state) => state.search);
@@ -37,6 +36,8 @@ const WeatherForecastDashboard = () => {
             maximumAge: 0,
           }
         );
+      } else {
+        dispatch(fetchWeatherByLocation(location));
       }
     };
     handleWeatherFetch();
@@ -47,7 +48,7 @@ const WeatherForecastDashboard = () => {
       {loading ? (
         <p>Loading weather data...</p>
       ) : (
-        <img src={sunny} alt="sunny" className="h-40 w-40" />
+        <p>{JSON.stringify(locationRawData)}</p>
       )}
     </section>
   );
