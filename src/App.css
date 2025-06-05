@@ -23,3 +23,39 @@
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+.alive-thunder svg {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  animation: breatheUpDown 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes breatheUpDown {
+  0% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.4));
+  }
+
+  /* Inhale phase - move up */
+  40% {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+  }
+
+  /* Hold at top */
+  50% {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+  }
+
+  /* Exhale phase - move down */
+  85% {
+    transform: translateY(4px);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+  }
+
+  100% {
+    transform: translateY(0px);
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.4));
+  }
+}

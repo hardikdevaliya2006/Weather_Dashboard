@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import getCurrentLocation from "../../store/Actions/getCurrentLocation.thunk";
 import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
+import haze from "../../../public/svg/weatherIcon/lightmode/Haze.svg";
+import Loading from "../loading/Loading";
+import { section } from "motion/react-client";
 
 const WeatherForecastDashboard = () => {
   const { locationRawData, loading } = useSelector((state) => state.search);
@@ -43,15 +46,7 @@ const WeatherForecastDashboard = () => {
     handleWeatherFetch();
   }, [dispatch, location, routerLocation.pathname]);
 
-  return (
-    <section className="flex bg-base-light-secondary dark:bg-base-dark-secondary dark:text-white text-base-dark-primary items-center justify-center flex-col gap-5">
-      {loading ? (
-        <p>Loading weather data...</p>
-      ) : (
-        <p>{JSON.stringify(locationRawData)}</p>
-      )}
-    </section>
-  );
+  return <></>
 };
 
 export default WeatherForecastDashboard;
