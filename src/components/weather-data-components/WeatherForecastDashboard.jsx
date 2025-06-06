@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import getCurrentLocation from "../../store/Actions/getCurrentLocation.thunk";
 import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
-import haze from "../../../public/svg/weatherIcon/lightmode/Haze.svg";
 import Loading from "../loading/Loading";
-import { section } from "motion/react-client";
+import MainDashboard from "./MainDashboard";
+import NotFound from "../../Pages/NotFound";
 
 const WeatherForecastDashboard = () => {
   const { locationRawData, loading } = useSelector((state) => state.search);
@@ -44,9 +44,19 @@ const WeatherForecastDashboard = () => {
       }
     };
     handleWeatherFetch();
-  }, [dispatch, location, routerLocation.pathname]);
-
-  return <></>
+  }, [dispatch, location, routerLocation.pathname])
+  
+  return (
+    <div className="md:h-[90vh] h-[86vh]">
+      {loading ? (
+        <Loading />
+      ) : locationRawData == "404" ? (
+        <NotFound />
+      ) : (
+        <MainDashboard locationRawData={locationRawData} />
+      )}
+    </div>
+  );
 };
 
 export default WeatherForecastDashboard;
