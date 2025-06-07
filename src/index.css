@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @theme {
   --color-base-dark-primary: #0f0f0f;
@@ -57,3 +56,38 @@
   -ms-overflow-style: none;
   scrollbar-width: none; 
 }
+
+
+/* 
+
+@font-face {
+  font-family: "Chrip";
+  src: url("../public/font/chirp-regular-web.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chrip";
+  src: url("../public/font/chirp-medium-web.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chrip";
+  src: url("../public/font/chirp-bold-web.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chrip";
+  src: url("../public/font/chirp-heavy-web.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  font-family: "Chrip";
+} */
