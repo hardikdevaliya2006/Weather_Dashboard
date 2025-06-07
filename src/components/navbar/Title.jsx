@@ -25,7 +25,7 @@ const Title = () => {
         <Icon className="text-[1.1rem] md:text-xl text-font-light-primary dark:text-font-dark-primary"/>
         <span className="text-[1.1rem] md:text-xl font flex text-font-light-secondary dark:text-font-dark-secondary">Hi,</span>
       </div>
-      <div className="time text-2xl md:text-3xl
+      <div className="time text-2xl font-semibold md:text-3xl
        text-font-light-primary dark:text-font-dark-primary">
         <p>{greeting}</p>
       </div>
