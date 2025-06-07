@@ -1,5 +1,5 @@
 import WeatherForecastDashboard from "../components/weather-data-components/WeatherForecastDashboard";
-import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/footer/footer";
 import "../App.css";
 
