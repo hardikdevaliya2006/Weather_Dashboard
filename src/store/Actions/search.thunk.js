@@ -5,7 +5,10 @@ export const fetchWeatherByLocation = createAsyncThunk(
   "searchReducer/fetchWeatherByLocation",
   async (location, thunkAPI) => {
     try {
-      const cleanLocation = location.replace(/^\//, "");
+      const cleanLocation = encodeURIComponent(
+        location.replace(/^\//, "").split(" ")[0]
+      );
+
       const response = await weatherDataByLocation.get("", {
         params: {
           q: cleanLocation,
