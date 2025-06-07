@@ -5,7 +5,7 @@ import { IoMdSpeedometer } from "react-icons/io";
 import sunrise from "../../../public/svg/sunrise.svg";
 import sunset from "../../../public/svg/sunset.svg";
 import { useSelector } from "react-redux";
-import "../../App.css"
+import "../../App.css";
 
 const Highlight = () => {
   const { locationRawData } = useSelector((state) => state.search);
@@ -55,7 +55,6 @@ const Highlight = () => {
               </span>
               <span className="description w-full flex items-center justify-end">
                 <p>
-                  Humidity is{" "}
                   {locationRawData.main.humidity < 30
                     ? "Dry"
                     : locationRawData.main.humidity <= 50
