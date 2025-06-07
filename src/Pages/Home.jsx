@@ -1,6 +1,6 @@
 import WeatherForecastDashboard from "../components/weather-data-components/WeatherForecastDashboard";
 // import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/footer/Footer";
+import Footer from "../components/Footer";
 import "../App.css";
 
 const Home = () => {
