@@ -7,7 +7,7 @@ const QureyPage = () => {
   return (
     <main className="mainContantWrap bg-base-light-primary dark:bg-base-dark-primary h-screen w-full">
       <header>
-        {/* <Navbar /> */}
+        <Navbar />
       </header>
       <section>
         <WeatherForecastDashboard />
