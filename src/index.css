@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @font-face {
   font-family: "Chrip";
@@ -52,4 +53,3 @@
   --color-font-light-muted: #8a8a8a;
 }
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));

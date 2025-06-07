@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @theme {
   --color-base-dark-primary: #0f0f0f;
   --color-base-dark-secondary: #1e1e1e;
@@ -21,8 +23,6 @@
   --color-font-light-secondary: #555555;
   --color-font-light-muted: #8a8a8a;
 }
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .spinner-container {
   display: flex;
