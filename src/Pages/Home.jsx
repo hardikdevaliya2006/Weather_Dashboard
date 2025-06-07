@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <main className="mainContantWrap bg-base-light-primary dark:bg-base-dark-primary sm:h-screen w-full">
       <header>
-        <Navbar />
+        {/* <Navbar /> */}
       </header>
       <section>
         <WeatherForecastDashboard />
