@@ -57,9 +57,6 @@
   scrollbar-width: none; 
 }
 
-
-/* 
-
 @font-face {
   font-family: "Chrip";
   src: url("../public/font/chirp-regular-web.woff") format("woff");
@@ -90,4 +87,4 @@
 
 * {
   font-family: "Chrip";
-} */
+} 
