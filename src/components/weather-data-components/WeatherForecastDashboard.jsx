@@ -47,13 +47,13 @@ const WeatherForecastDashboard = () => {
   }, [dispatch, location, routerLocation.pathname])  
 
   return (
-    <div className="md:h-[90vh] h-[86vh]">
-      {loading ? (
+    <div className="md:h-[90vh] h-[86vh] noScrollBar overflow-scroll">
+      {loading || !locationRawData || !locationRawData.name || !locationRawData.weather ? (
         <Loading />
       ) : locationRawData == "404" ? (
         <NotFound />
       ) : (
-        <MainDashboard locationRawData={locationRawData} />
+        <MainDashboard />
       )}
     </div>
   );
