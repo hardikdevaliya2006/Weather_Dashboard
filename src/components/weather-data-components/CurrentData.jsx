@@ -24,7 +24,6 @@ const CurrentData = () => {
             {new Date().getDate() > 9
               ? new Date().getDate()
               : "0" + new Date().getDate()}
-            {}
           </span>
           <span>
             {new Date().toLocaleDateString("en-US", { month: "long" })}
