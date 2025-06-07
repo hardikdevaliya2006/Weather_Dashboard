@@ -5,6 +5,7 @@ import { IoMdSpeedometer } from "react-icons/io";
 import sunrise from "../../../public/svg/sunrise.svg";
 import sunset from "../../../public/svg/sunset.svg";
 import { useSelector } from "react-redux";
+import "../../App.css"
 
 const Highlight = () => {
   const { locationRawData } = useSelector((state) => state.search);
