@@ -1,7 +1,7 @@
 import WeatherForecastDashboard from "../components/weather-data-components/WeatherForecastDashboard";
-import Footer from "../components/Footer";
-import "../App.css";
+import UseFullLink from "../components/Footer/UseFullLinks"
 import Navbar from "../components/Toggle-Bar/Navbar";
+import "../App.css";
 
 const QureyPage = () => {
   return (
@@ -13,7 +13,7 @@ const QureyPage = () => {
         <WeatherForecastDashboard />
       </section>
       <footer>
-        <Footer />
+        <UseFullLink />
       </footer>
     </main>
   );
