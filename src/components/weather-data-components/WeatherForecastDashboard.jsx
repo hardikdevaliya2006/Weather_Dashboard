@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
 import { fetchWeatherByCountry } from "../../store/Actions/otherCountriesWeather.thunk";
+import { fetchForecastByCoords } from "../../store/Actions/getForecast.thunk";
 
 const WeatherForecastDashboard = () => {
   const {
@@ -18,17 +19,19 @@ const WeatherForecastDashboard = () => {
   const { otherCountriesWeatherData, loading: countriesLoading } = useSelector(
     (state) => state.otherCountriesWeather
   );
-  const loading = searchLoading || countriesLoading;
+  const { forecastData, loading: forecastDataLoading } = useSelector(
+    (state) => state.forecast
+  );
+  const loading = searchLoading || countriesLoading || forecastDataLoading;
   const { location } = useParams();
   const routerLocation = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
     const handleWeatherFetch = async () => {
-
       popularCountries.forEach((country) => {
         dispatch(fetchWeatherByCountry(country));
-      })
+      });
 
       if (routerLocation.pathname === "/") {
         if (!navigator.geolocation) {
@@ -39,8 +42,8 @@ const WeatherForecastDashboard = () => {
         navigator.geolocation.getCurrentPosition(
           async (position) => {
             const { latitude, longitude } = position.coords;
+            dispatch(fetchForecastByCoords({ lon:longitude, lat:latitude }));            
             const locationName = await getCurrentLocation(latitude, longitude);
-
             if (locationName) {
               dispatch(fetchWeatherByLocation(locationName));
             } else {
@@ -59,12 +62,12 @@ const WeatherForecastDashboard = () => {
       } else {
         dispatch(fetchWeatherByLocation(location));
       }
-    }
+    };
 
     handleWeatherFetch();
   }, [dispatch, location, routerLocation.pathname]);
 
-  console.log(otherCountriesWeatherData);
+
 
   return (
     <div>
@@ -75,7 +78,11 @@ const WeatherForecastDashboard = () => {
       ) : !locationRawData?.name ? (
         <Loading />
       ) : (
-        <MainDashboard otherCountriesWeatherData={otherCountriesWeatherData} locationRawData={locationRawData} />
+        <MainDashboard
+          otherCountriesWeatherData={otherCountriesWeatherData}
+          locationRawData={locationRawData}
+          forecastData={forecastData}
+        />
       )}
     </div>
   );

@@ -9,13 +9,12 @@ export const fetchWeatherByCountry = createAsyncThunk(
         params: {
           q: countryName,
         },
-      });
+      })
       return { country: countryName, data: response.data };
     } catch (error) {
       return thunkAPI.rejectWithValue({
         country: countryName,
-        error: error.status,
-      });
+      })
     }
   }
 )
