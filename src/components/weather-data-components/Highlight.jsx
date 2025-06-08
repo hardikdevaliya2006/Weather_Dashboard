@@ -10,13 +10,13 @@ import "../../App.css";
 const Highlight = () => {
   const { locationRawData } = useSelector((state) => state.search);
   return (
-    <div className="p-3 w-full sm:p-4 rounded-xl text-font-light-primary dark:text-font-dark-primary bg-base-light-secondary dark:bg-base-dark-secondary flex flex-col gap-2 items-start justify-center">
-      <div className="title font-semibold text-xl md:text-2xl">
+    <div className="p-3 w-full sm:p-5 rounded-2xl text-font-light-primary dark:text-font-dark-primary bg-base-light-secondary dark:bg-base-dark-secondary flex flex-col gap-2 items-start justify-center">
+      <div className="title font-semibold text-xl sm:text-3xl">
         <h1>Today’s Highlight</h1>
       </div>
-      <div className="highLightWraper w-full flex items-center gap-2 flex-col sm:flex-row md:flex-col lg:flex-row justify-center">
-        <div className="basicInfo w-full flex gap-2">
-          <div className="firstrow w-full flex flex-col gap-2">
+      <div className="highLightWraper w-full flex items-center gap-4 flex-col sm:flex-row md:flex-col lg:flex-row justify-center">
+        <div className="basicInfo w-full flex gap-4">
+          <div className="firstrow w-full flex flex-col gap-4">
             <div className="py-2 w-full px-4 bg-base-light-tertiary dark:bg-base-dark-quaternary rounded-xl flex flex-col items-center justify-center gap-1">
               <span className="text-[1.1rem] md:text-xl flex items-center font-semibold justify-center gap-1">
                 <PiWind />
@@ -66,7 +66,7 @@ const Highlight = () => {
               </span>
             </div>
           </div>
-          <div className="second w-full flex flex-col gap-2">
+          <div className="second w-full flex flex-col gap-4">
             <div className="py-2 px-4 bg-base-light-tertiary dark:bg-base-dark-quaternary rounded-xl flex flex-col items-center justify-center gap-1">
               <span className="text-[1.1rem] md:text-xl flex items-center font-semibold justify-center gap-1">
                 <IoMdSpeedometer />
@@ -109,7 +109,7 @@ const Highlight = () => {
             </div>
           </div>
         </div>
-        <div className="sunInfo w-full gap-2 grid grid-rows-2">
+        <div className="sunInfo w-full gap-4 grid grid-rows-2">
           <div className="sunrise flex items-center justify-between py-[1.11rem] lg:py-[1.28rem] px-[10%] bg-base-light-tertiary rounded-xl w-full dark:bg-base-dark-quaternary">
             <div className="icon">
               <img src={sunrise} alt="sunrise" className="h-18 w-18" />

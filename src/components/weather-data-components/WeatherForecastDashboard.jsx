@@ -24,6 +24,8 @@ const WeatherForecastDashboard = () => {
           async (position) => {
             const { latitude, longitude } = position.coords;
             const locationName = await getCurrentLocation(latitude, longitude);
+            console.log(locationName);
+            
             if (locationName) {
               dispatch(fetchWeatherByLocation(locationName))
             } else {
@@ -43,14 +45,14 @@ const WeatherForecastDashboard = () => {
         dispatch(fetchWeatherByLocation(location));
       }
     };
-    handleWeatherFetch();
-  }, [dispatch, location, routerLocation.pathname])  
+    handleWeatherFetch()
+  }, [dispatch, location, routerLocation.pathname])    
 
   return (
     <div>
-      {loading || !locationRawData || !locationRawData.name || !locationRawData.weather ? (
+      {loading ? (
         <Loading />
-      ) : locationRawData == "404" ? (
+      ) : locationRawData === 404 ? (
         <NotFound />
       ) : (
         <MainDashboard />

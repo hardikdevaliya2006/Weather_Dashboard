@@ -5,7 +5,7 @@ import "../App.css";
 
 const QureyPage = () => {
   return (
-    <main className="mainContantWrap bg-base-light-primary dark:bg-base-dark-primary h-screen w-full">
+    <main className="mainContantWrap bg-base-light-primary dark:bg-base-dark-primary w-full">
       <header>
         <Navbar />
       </header>
