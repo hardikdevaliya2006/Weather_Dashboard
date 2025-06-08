@@ -8,7 +8,7 @@ const MainDashboard = ({ locationRawData }) => {
   
   return (
     <div className="mainDataWraper p-2 h-full flex md:flex-row gap-[1rem] flex-col">
-      <div className="currentDataAndothersCountries flex-col flex w-full md:w-[40%]">
+      <div className="currentDataAndothersCountries flex-col flex w-full md:w-[40%] gap-4">
         <CurrentData locationRawData={locationRawData}/>
         <OthersCountries />
       </div>
