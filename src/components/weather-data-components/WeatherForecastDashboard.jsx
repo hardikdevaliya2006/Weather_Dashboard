@@ -55,7 +55,7 @@ const WeatherForecastDashboard = () => {
       ) : locationRawData === 404 ? (
         <NotFound />
       ) : !locationRawData?.name ? (
-        ""
+        <></>
       ) : (
         <MainDashboard locationRawData={locationRawData} />
       )}
