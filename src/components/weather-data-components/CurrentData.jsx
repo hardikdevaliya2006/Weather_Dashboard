@@ -1,11 +1,8 @@
 import { FiMapPin } from "react-icons/fi";
-import { useSelector } from "react-redux";
 import WeatherIcon from "./WeatherIcon";
 
-const CurrentData = () => {
-  const { locationRawData } = useSelector((state) => state.search);
-
-  return (
+const CurrentData = ({ locationRawData }) => {
+    return (
     <div className="currentDataCard flex flex-col h-fit gap-2 items-start justify-center p-3 sm:p-5 rounded-2xl text-font-light-primary dark:text-font-dark-primary bg-base-light-secondary dark:bg-base-dark-secondary">
       <div className="locationName w-fit px-3 text-sm sm:text-[1.1rem] flex items-center justify-start gap-2 rounded-md p-1 bg-base-light-tertiary dark:bg-base-dark-accent">
         <span>

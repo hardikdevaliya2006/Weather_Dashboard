@@ -4,11 +4,10 @@ import { MdOutlineWaterDrop } from "react-icons/md";
 import { IoMdSpeedometer } from "react-icons/io";
 import sunrise from "../../../public/svg/sunrise.svg";
 import sunset from "../../../public/svg/sunset.svg";
-import { useSelector } from "react-redux";
 import "../../App.css";
 
-const Highlight = () => {
-  const { locationRawData } = useSelector((state) => state.search);
+const Highlight = ({ locationRawData }) => {
+  
   return (
     <div className="p-3 w-full sm:p-5 rounded-2xl text-font-light-primary dark:text-font-dark-primary bg-base-light-secondary dark:bg-base-dark-secondary flex flex-col gap-2 items-start justify-center">
       <div className="title font-semibold text-xl sm:text-3xl">

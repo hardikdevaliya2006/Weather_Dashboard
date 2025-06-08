@@ -25,9 +25,9 @@ const WeatherForecastDashboard = () => {
             const { latitude, longitude } = position.coords;
             const locationName = await getCurrentLocation(latitude, longitude);
             console.log(locationName);
-            
+
             if (locationName) {
-              dispatch(fetchWeatherByLocation(locationName))
+              dispatch(fetchWeatherByLocation(locationName));
             } else {
               alert("City Not Found");
             }
@@ -45,8 +45,8 @@ const WeatherForecastDashboard = () => {
         dispatch(fetchWeatherByLocation(location));
       }
     };
-    handleWeatherFetch()
-  }, [dispatch, location, routerLocation.pathname])    
+    handleWeatherFetch();
+  }, [dispatch, location, routerLocation.pathname]);
 
   return (
     <div>
@@ -54,8 +54,10 @@ const WeatherForecastDashboard = () => {
         <Loading />
       ) : locationRawData === 404 ? (
         <NotFound />
+      ) : !locationRawData?.name ? (
+        ""
       ) : (
-        <MainDashboard />
+        <MainDashboard locationRawData={locationRawData} />
       )}
     </div>
   );
