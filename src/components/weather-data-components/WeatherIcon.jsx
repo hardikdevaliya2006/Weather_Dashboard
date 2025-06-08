@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { weatherIconsDark, weatherIconsLight } from "../../helper/helperScript"
 
-const WeatherIcon = ({ weatherMain }) => {
+const WeatherIcon = ({ weatherMain, classBlob }) => {
   const [selectedIconPack, setSelectedIconPack] = useState(() =>
     document.documentElement.getAttribute("data-theme") === "dark"
       ? weatherIconsDark
@@ -31,7 +31,7 @@ const WeatherIcon = ({ weatherMain }) => {
     <img
       src={`data:image/svg+xml;utf8,${encodeURIComponent(svgData)}`}
       alt={weatherMain}
-      className="w-30 sm:w-34 h-30 sm:h-34"
+      className={`${classBlob}`}
     />
   );
 };
