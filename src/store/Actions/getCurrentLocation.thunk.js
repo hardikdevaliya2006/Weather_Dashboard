@@ -1,8 +1,8 @@
-import currentLocationName from "../../services/currentLocationName";
+import weatherData from "../../services/weatherData";
 
 const getCurrentLocation = async (lat, lon) => {
   try {
-    const response = await currentLocationName.get("", {
+    const response = await weatherData.get("/geo/1.0/reverse", {
       params: {
         lat,
         lon,

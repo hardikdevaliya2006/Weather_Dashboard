@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { weatherIconsDark, weatherIconsLight } from "../../helper/svgpath"
+import { weatherIconsDark, weatherIconsLight } from "../../helper/helperScript"
 
 const WeatherIcon = ({ weatherMain }) => {
   const [selectedIconPack, setSelectedIconPack] = useState(() =>

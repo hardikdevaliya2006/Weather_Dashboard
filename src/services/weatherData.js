@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = `https://api.openweathermap.org/data/2.5/forecast`;
+const BASE_URL = `https://api.openweathermap.org`;
 
 const weatherData = axios.create({
   baseURL: BASE_URL,

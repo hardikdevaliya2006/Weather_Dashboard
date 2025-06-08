@@ -27,14 +27,15 @@ html,
 body {
   height: 100%;
   width: 100%;
+}
+
+[data-theme="light"] body {
   background-color: #ffffff;
 }
 
-[data-theme="dark"] html,
-body {
+[data-theme="dark"] body {
   background-color: #0f0f0f;
 }
-
 .spinner-container {
   display: flex;
   justify-content: center;

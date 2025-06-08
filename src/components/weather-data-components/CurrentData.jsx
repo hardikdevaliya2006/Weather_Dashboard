@@ -2,7 +2,7 @@ import { FiMapPin } from "react-icons/fi";
 import WeatherIcon from "./WeatherIcon";
 
 const CurrentData = ({ locationRawData }) => {
-    return (
+  return (
     <div className="currentDataCard flex flex-col h-fit gap-2 items-start justify-center p-3 sm:p-5 rounded-2xl text-font-light-primary dark:text-font-dark-primary bg-base-light-secondary dark:bg-base-dark-secondary">
       <div className="locationName w-fit px-3 text-sm sm:text-[1.1rem] flex items-center justify-start gap-2 rounded-md p-1 bg-base-light-tertiary dark:bg-base-dark-accent">
         <span>
@@ -48,11 +48,11 @@ const CurrentData = ({ locationRawData }) => {
             </span>
           </div>
           <div className="weatherCondition flex flex-col items-end justify-center">
-            <span className="description capitalize text-xl sm:text-2xl">
+            <span className="description text-right capitalize text-xl sm:text-2xl">
               {locationRawData.weather[0].description}
             </span>
             <span className="feelsLike opacity-80 sm:text-[1.1rem]">
-              Feels like {Math.round(locationRawData.main.feels_like - 273.15)}°
+              Feels like {Math.round(locationRawData.main.temp_min - 273.15)}°
             </span>
           </div>
         </div>

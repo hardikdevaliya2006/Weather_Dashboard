@@ -1,20 +1,33 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router";
 import getCurrentLocation from "../../store/Actions/getCurrentLocation.thunk";
-import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
 import Loading from "../loading/Loading";
 import MainDashboard from "./MainDashboard";
 import NotFound from "../../Pages/NotFound";
+import { popularCountries } from "../../helper/helperScript";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useParams } from "react-router";
+import { fetchWeatherByLocation } from "../../store/Actions/search.thunk";
+import { fetchWeatherByCountry } from "../../store/Actions/otherCountriesWeather.thunk";
 
 const WeatherForecastDashboard = () => {
-  const { locationRawData, loading } = useSelector((state) => state.search);
+  const {
+    locationRawData,
+    loading: searchLoading,
+    error,
+  } = useSelector((state) => state.search);
+  const { otherCountriesWeatherData, loading: countriesLoading } = useSelector(
+    (state) => state.otherCountriesWeather
+  );
+  const loading = searchLoading || countriesLoading;
   const { location } = useParams();
   const routerLocation = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
     const handleWeatherFetch = async () => {
+      popularCountries.forEach((country) => {
+        dispatch(fetchWeatherByCountry(country));
+      });
       if (routerLocation.pathname === "/") {
         if (!navigator.geolocation) {
           alert("Geolocation not supported");
@@ -48,11 +61,13 @@ const WeatherForecastDashboard = () => {
     handleWeatherFetch();
   }, [dispatch, location, routerLocation.pathname]);
 
+  console.log(otherCountriesWeatherData);
+
   return (
     <div>
       {loading ? (
         <Loading />
-      ) : locationRawData === 404 ? (
+      ) : error === 404 ? (
         <NotFound />
       ) : !locationRawData?.name ? (
         <Loading />

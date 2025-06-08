@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import weatherDataByLocation from "../../services/weatherDataByLocation";
+import weatherData from "../../services/weatherData";
 
 export const fetchWeatherByLocation = createAsyncThunk(
   "searchReducer/fetchWeatherByLocation",
@@ -9,7 +9,7 @@ export const fetchWeatherByLocation = createAsyncThunk(
         location.replace(/^\//, "").split(" ")[0]
       );
 
-      const response = await weatherDataByLocation.get("", {
+      const response = await weatherData.get("/data/2.5/weather", {
         params: {
           q: cleanLocation,
         },

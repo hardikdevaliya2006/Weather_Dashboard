@@ -27,8 +27,7 @@ const searchSlice = createSlice({
       .addCase(fetchWeatherByLocation.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        state.locationRawData = state.error;
-      });
+      })
   },
 });
 
