@@ -25,19 +25,21 @@ const WeatherForecastDashboard = () => {
 
   useEffect(() => {
     const handleWeatherFetch = async () => {
+
       popularCountries.forEach((country) => {
         dispatch(fetchWeatherByCountry(country));
-      });
+      })
+
       if (routerLocation.pathname === "/") {
         if (!navigator.geolocation) {
           alert("Geolocation not supported");
           return;
         }
+
         navigator.geolocation.getCurrentPosition(
           async (position) => {
             const { latitude, longitude } = position.coords;
             const locationName = await getCurrentLocation(latitude, longitude);
-            console.log(locationName);
 
             if (locationName) {
               dispatch(fetchWeatherByLocation(locationName));
@@ -57,7 +59,8 @@ const WeatherForecastDashboard = () => {
       } else {
         dispatch(fetchWeatherByLocation(location));
       }
-    };
+    }
+
     handleWeatherFetch();
   }, [dispatch, location, routerLocation.pathname]);
 
@@ -72,7 +75,7 @@ const WeatherForecastDashboard = () => {
       ) : !locationRawData?.name ? (
         <Loading />
       ) : (
-        <MainDashboard locationRawData={locationRawData} />
+        <MainDashboard otherCountriesWeatherData={otherCountriesWeatherData} locationRawData={locationRawData} />
       )}
     </div>
   );
