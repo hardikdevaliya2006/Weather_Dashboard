@@ -10,7 +10,7 @@ Users can either search for a city or allow location access to automatically dis
 
 ## 📸 Screenshot
 
-<img src="https://github.com/hardikdevaliya2006/Weather_Dashboard/blob/" />
+<img src="https://github.com/hardikdevaliya2006/Weather_Dashboard/blob/main/public/Screen/previwe.png" alt="img" />
 
 ---
 
