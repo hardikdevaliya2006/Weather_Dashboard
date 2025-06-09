@@ -6,20 +6,17 @@ With a clean aesthetic, smooth animations, and a mobile-first design, this app n
 
 Users can either search for a city or allow location access to automatically display local conditions. Built using tools like Redux Toolkit, React Router, Axios, Framer Motion, and Tailwind CSS, this project demonstrates efficient state management, API handling, and UI performance—all wrapped in an intuitive user interface.
 
----
 
 ## 📸 Screenshot
 
 <img src="https://github.com/hardikdevaliya2006/Weather_Dashboard/blob/main/public/Screen/previwe.png" alt="img" />
 
----
 
 ## 🚀 Live Demo
 
 Check it out live:  
 🔗 https://weatherforecastdashboard.vercel.app/
 
----
 
 ## 🧩 Table of Contents
 
@@ -32,7 +29,6 @@ Check it out live:
 - [Author](#author)  
 - [Tags](#tags)
 
----
 
 ## 📘 About
 
@@ -44,7 +40,6 @@ This **Weather Dashboard** lets users:
 
 Built with a focus on minimalist design and seamless UX.
 
----
 
 ## 💻 Tech Stack
 
@@ -56,7 +51,6 @@ Built with a focus on minimalist design and seamless UX.
 - **Tailwind CSS**  
 - **Axios**  
 
----
 
 ## 🗂️ Folder Structure
 
@@ -90,7 +84,6 @@ Built with a focus on minimalist design and seamless UX.
 └── README.md # Project documentation
 ```
 
----
 
 ## 🌟 Features
 
@@ -100,7 +93,6 @@ Built with a focus on minimalist design and seamless UX.
 - UI animations + visual weather highlights  
 - Fully responsive & mobile-first design
 
----
 
 ## 🛠️ Installation & Setup
 
@@ -129,25 +121,21 @@ Built with a focus on minimalist design and seamless UX.
 5. Open in browser:  
    Navigate to `http://localhost:3000` (or the port Vite specifies).
 
----
 
 ## 📡 API Reference
 
 - **OpenWeatherMap API** – Used for fetching current conditions and forecasts.
 
----
 
 ## 👨‍💻 Author
 
 **Hardik Devaliya**  
 Built with ❤️ by Hardik.
 
----
 
 ## 🏷️ Tags
 
 `react` `redux-toolkit` `tailwindcss` `framer-motion` `axios` `react-router` `weather-app`
 
----
 
 > **Note:** Ensure you’ve added your **geolocation permissions** when testing locally to enable auto-detect weather.
