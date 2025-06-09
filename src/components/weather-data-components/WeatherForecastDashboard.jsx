@@ -42,7 +42,7 @@ const WeatherForecastDashboard = () => {
         navigator.geolocation.getCurrentPosition(
           async (position) => {
             const { latitude, longitude } = position.coords;
-            dispatch(fetchForecastByCoords({ lon:longitude, lat:latitude }));            
+            dispatch(fetchForecastByCoords({ lon: longitude, lat: latitude }));
             const locationName = await getCurrentLocation(latitude, longitude);
             if (locationName) {
               dispatch(fetchWeatherByLocation(locationName));
@@ -67,7 +67,20 @@ const WeatherForecastDashboard = () => {
     handleWeatherFetch();
   }, [dispatch, location, routerLocation.pathname]);
 
-
+  useEffect(() => {
+    if (
+      locationRawData?.coord?.lat &&
+      locationRawData?.coord?.lon &&
+      routerLocation.pathname !== "/"
+    ) {
+      dispatch(
+        fetchForecastByCoords({
+          lat: locationRawData.coord.lat,
+          lon: locationRawData.coord.lon,
+        })
+      );
+    }
+  }, [locationRawData, dispatch, routerLocation.pathname]);
 
   return (
     <div>

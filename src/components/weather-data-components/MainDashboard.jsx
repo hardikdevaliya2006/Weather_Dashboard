@@ -5,12 +5,12 @@ import OthersCountries from "./OthersCountries";
 
 const MainDashboard = ({ otherCountriesWeatherData, locationRawData, forecastData }) => {  
   return (
-    <div className="mainDataWraper p-2 h-full flex md:flex-row gap-[1rem] flex-col">
-      <div className="currentDataAndothersCountries flex-col flex w-full md:w-[40%] gap-4">
+    <div className="mainDataWraper px-2 pt-2 pb-1 h-full flex md:flex-row gap-[1rem] flex-col">
+      <div className="currentDataAndothersCountries flex-col flex w-full md:w-[42%] gap-4">
         <CurrentData locationRawData={locationRawData}/>
         <OthersCountries otherCountriesWeatherData={otherCountriesWeatherData} />
       </div>
-      <div className="highlightAndForecast w-full md:w-[60%]">
+      <div className="highlightAndForecast w-full md:w-[58%] flex-col flex gap-4">
         <Highlight locationRawData={locationRawData} />
         <Forecast forecastData={forecastData} />
       </div>

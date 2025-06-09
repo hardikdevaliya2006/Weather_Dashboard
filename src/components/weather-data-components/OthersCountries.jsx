@@ -15,8 +15,8 @@ const OthersCountries = ({ otherCountriesWeatherData }) => {
         <div className="title font-semibold py-2 text-xl sm:text-3xl">
           <h1>Others Countries</h1>
         </div>
-        <div className="otherCountriesweather w-full h-[34vh] md:h-[45vh] overflow-scroll noScrollBar">
-          <ul className="flex flex-col items-center w-full justify-center gap-4">
+        <div className="otherCountriesweather w-full h-[34vh] md:h-[43vh] overflow-scroll noScrollBar">
+          <ul className="grid grid-cols-1 items-center w-full justify-center gap-4">
             {popularCountries.map((country) => {
               return (
                 <li

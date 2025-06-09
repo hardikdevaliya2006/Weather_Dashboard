@@ -59,7 +59,7 @@ const CurrentData = ({ locationRawData }) => {
               <span className="description text-right capitalize text-xl sm:text-2xl">
                 {locationRawData.weather[0].description}
               </span>
-              <span className="feelsLike opacity-80 sm:text-[1.1rem]">
+              <span className="feelsLike opacity-80 sm:text-[1rem]">
                 Feels like {Math.round(locationRawData.main.temp_min - 273.15)}°
               </span>
             </div>

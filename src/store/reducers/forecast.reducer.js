@@ -17,7 +17,6 @@ const forecastSlice = createSlice({
       .addCase(fetchForecastByCoords.fulfilled, (state, action) => {
         state.loading = false;
         state.forecastData = action.payload;
-        console.log(state.forecastData);
       })
       .addCase(fetchForecastByCoords.rejected, (state, action) => {
         state.loading = false;

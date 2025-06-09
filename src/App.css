@@ -69,3 +69,38 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.scrollBar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+  background: #cccccc;
+  border-radius: 4px;
+  width: 8px;
+}
+
+[data-theme="dark"] .scrollBar::-webkit-scrollbar-track {
+  background: #363636;
+  border-radius: 4px;
+  width: 8px;
+}
+
+[data-theme="dark"] .scrollBar::-webkit-scrollbar-thumb {
+  background: #4b4b4b;
+  border-radius: 4px;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+  background: #eeeded;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .scrollBarVisible::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollBarVisible {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+}
